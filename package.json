@@ -1,0 +1,11 @@
+{
+  "name": "codex-notch-companion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:ui": "node tests/prototype.spec.js"
+  },
+  "devDependencies": {
+    "playwright": "1.61.1"
+  }
+}

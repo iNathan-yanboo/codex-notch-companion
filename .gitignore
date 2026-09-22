@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+build/
+dist/
+.cursor/
+*.xcuserstate
+xcuserdata/
+DerivedData/
+design-qa.md
+artifacts/native-qa/

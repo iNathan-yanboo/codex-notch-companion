@@ -1,0 +1,13 @@
+{
+  "date": "2026-07-10",
+  "source": "local-codex",
+  "turns": 205,
+  "input_tokens": 21311658,
+  "cached_input_tokens": 19164544,
+  "output_tokens": 133636,
+  "reasoning_output_tokens": 60987,
+  "total_tokens": 21445294,
+  "upload_code": 0,
+  "upload_message": "ok",
+  "last_success_at": "2026-07-10T03:05:02.764914Z"
+}

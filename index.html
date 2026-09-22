@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0c0c" />
+    <title>Codex Notch Companion · Prototype</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <!--
+      Junior pass assumptions:
+      1. The browser stage is a visual stand-in for a macOS notch-level window.
+      2. Fixture data mirrors the verified local aiusage and Local usage field contracts.
+      3. The collapsed state intentionally has no labels; details appear after click.
+    -->
+    <main class="prototype-shell">
+      <header class="prototype-header">
+        <div>
+          <p class="eyebrow">CODEX NOTCH COMPANION · V1 PROTOTYPE</p>
+          <h1>把额度变成刘海的一条呼吸线</h1>
+          <p class="lede">折叠时只看进度形态，展开后再看会话、AIUsage 与 Local usage。当前为本地 fixture 演示，不会触发上传。</p>
+        </div>
+        <div class="header-meta" aria-label="prototype metadata">
+          <span class="meta-dot"></span>
+          <span>LOCAL PREVIEW</span>
+        </div>
+      </header>
+
+      <section class="desktop-stage" data-testid="desktop-stage" aria-label="macOS desktop preview">
+        <div class="desktop-topline"><span>9:41</span><span>Codex workspace</span><span>Wi‑Fi&nbsp;&nbsp;100%</span></div>
+        <div class="desktop-window ghost-window">
+          <div class="ghost-toolbar"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span><span class="ghost-title">session / active workspace</span></div>
+          <div class="ghost-body"><div class="ghost-sidebar"></div><div class="ghost-content"><div class="ghost-line long"></div><div class="ghost-line medium"></div><div class="ghost-block"></div></div></div>
+        </div>
+
+        <section class="notch-window" data-testid="notch-window" data-status="ready" aria-label="Codex usage companion">
+          <button class="notch-hit-area" data-testid="notch-toggle" aria-expanded="false" aria-controls="details-panel" type="button">
+            <span class="notch-sheen" aria-hidden="true"></span>
+            <svg class="wave-contour" viewBox="0 0 760 56" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="quota-gradient" x1="0" x2="1">
+                  <stop offset="0" stop-color="#ff6c92" />
+                  <stop offset=".42" stop-color="#f5a45f" />
+                  <stop offset=".58" stop-color="#f4c774" />
+                  <stop offset="1" stop-color="#8fe3c0" />
+                </linearGradient>
+                <mask id="quota-mask-five" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="760" height="56">
+                  <path class="wave-mask" data-testid="quota-wave-mask-five" d="M 88 1 C 88 31 101 50 132 50 H 380" pathLength="500" />
+                </mask>
+                <mask id="quota-mask-weekly" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="760" height="56">
+                  <path class="wave-mask" data-testid="quota-wave-mask-weekly" d="M 672 1 C 672 31 659 50 628 50 H 380" pathLength="500" />
+                </mask>
+              </defs>
+              <path class="wave-base" d="M 88 1 C 88 31 101 50 132 50 H 628 C 659 50 672 31 672 1" pathLength="1000" />
+              <path class="wave-active five-hour" data-testid="quota-wave-five" d="M 88 1 C 88 31 101 50 132 50 H 380" pathLength="500" />
+              <path class="wave-active weekly" data-testid="quota-wave-weekly" d="M 672 1 C 672 31 659 50 628 50 H 380" pathLength="500" />
+              <path class="wave-shimmer five-hour" data-testid="quota-wave-shimmer-five" d="M 88 1 C 88 31 101 50 132 50 H 380" mask="url(#quota-mask-five)" pathLength="500" />
+              <path class="wave-shimmer weekly" data-testid="quota-wave-shimmer-weekly" d="M 672 1 C 672 31 659 50 628 50 H 380" mask="url(#quota-mask-weekly)" pathLength="500" />
+            </svg>
+            <span class="status-dot" data-testid="status-dot" aria-hidden="true"></span>
+          </button>
+          <div class="details-panel" id="details-panel" data-testid="details-panel" hidden></div>
+        </section>
+      </section>
+
+      <section class="demo-toolbar" aria-label="prototype controls">
+        <div class="toolbar-copy"><span class="eyebrow">REVIEW CONTROLS</span><span>切换状态检查波浪与展开态降级表现</span></div>
+        <div class="toolbar-actions">
+          <button type="button" data-testid="status-idle" data-status-control="ready">正常</button>
+          <button type="button" data-testid="status-working" data-status-control="working">同步中</button>
+          <button type="button" data-testid="status-stale" data-status-control="stale">过期</button>
+          <button type="button" data-testid="status-error" data-status-control="error">异常</button>
+        </div>
+      </section>
+
+      <footer class="prototype-footer">
+        <span>AIUsage · 本地记录</span><span>Local usage · 上报统计</span><span>本页不读认证、不上传数据</span>
+      </footer>
+    </main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

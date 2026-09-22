@@ -1,0 +1,17 @@
+{
+  "inputTokens": 30798952,
+  "outputTokens": 179388,
+  "cacheReadTokens": 29495424,
+  "cacheWriteTokens": 0,
+  "thinkingTokens": 60116,
+  "totalTokens": 60533880,
+  "totalCost": 118.0622475,
+  "activeDays": 2,
+  "totalSessions": 9,
+  "byTool": { "codex": { "tokens": 60533880, "cost": 118.0622475 } },
+  "topToolCalls": [
+    { "name": "exec_command", "count": 259 },
+    { "name": "update_plan", "count": 15 },
+    { "name": "search_graph", "count": 3 }
+  ]
+}
